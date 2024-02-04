@@ -1,23 +1,3 @@
-// 참고 사이트 :https://developerntraveler.tistory.com/95
-// https://sisiblog.tistory.com/234 
-// https://velog.io/@dev_tuktack/NodeList-to-Array
-// https://ondolroom.tistory.com/127
-// https://www.daleseo.com/js-timer
-// https://nyol.tistory.com/166
-// https://hianna.tistory.com/722
-
-// 종료화면 구현하기!!!!!
-// 화면에 겹치게 검은 화면 살짝 뜨면서 정중앙에 알림창 뜨게끔!
-// container의 배경을 검은색 투명한 걸로 바꾸면서
-// container와 형제 노드인 div를 만들어서 화면 정중앙에 띄우는 방법으로..!
-// -> 배경 어두워지는 팝업창!! "레이어 팝업, 모달 팝업"
-// https://sevendays.tistory.com/30
-
-// 이미 뽑은 카드는 못 누르게 만들기!
-
-
-// 자바스크립트에서 깊은 복사는 요소 하나하나를 모두 복사해오는 수밖에 없음
-
 let score = 0;
 let beforeCard = null;
 let presentCard = null;
@@ -119,8 +99,6 @@ function openPop(score){
 
     modalBg.style.display = "block";
     modalPop.style.display = "block";
-
-    // let popup = window.open("", "endAlarm", "menubar=1 toolbar=no location=0 width=300px, height=300px, scrollbars=no");
 }
 
 
@@ -139,10 +117,7 @@ replay.addEventListener('click', function(e){
     init();
 });
 
-// document의 클릭 이벤트를 감지하는 애가 하나
-// 클릭했을 때 감지하는 애를 하나 더 추가함
-// 그러면 다음 클릭 때는 클릭 이벤트가 두번 일어나고 또 감지하는애를 더 추가함
-// 클릭했을 때 어떤 객체를 선택했는지 알려주는 함수
+
 container.addEventListener('click', function(e){
     const scoreCover = document.querySelector(".scoreCover");
     if((e.target.className === 'clickCover') && (picking.length < 2)){
@@ -158,11 +133,6 @@ container.addEventListener('click', function(e){
                 }else if((presentCard !== beforeCard) && (presentCard.innerText === beforeCard.innerText)){
                     score += 15;
                     alert("잘했어요!😉 (+15점)");
-                    // 뽑았던 카드가 노출되게 만들기
-
-                    // 이벤트 리스너 삭제
-                    // 이벤트 리스너로 등록된 함수의 이름을 읽어올 수 없다는 문제점
-                    // 투명한 div로 덮어버리기
 
                     beforeCard.nextElementSibling.classList.add('clear');
                     presentCard.nextElementSibling.classList.add('clear');
@@ -188,7 +158,7 @@ container.addEventListener('click', function(e){
                 picking.splice(0, 2);
 
                 if(picked.length === 16){
-                    // 팝업창 띄우기!
+                    // 팝업창 띄우기
                     openPop(score);
                 }
 
@@ -204,7 +174,6 @@ function init() {
     make();
     addFunction();
 }
-
 
 
 init();
