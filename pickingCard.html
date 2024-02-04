@@ -1,0 +1,37 @@
+<!--카드 뽑기 게임-->
+<!-- 참고 사이트: https://webclub.tistory.com/622 -->
+<!-- https://kincoding.com/entry/Hover-%EB%B2%84%ED%8A%BC%EC%9D%84-%ED%8F%BC-%EB%82%98%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0-transition-transform-%EC%A0%81%EC%9A%A9 -->
+<!-- 숨겨진 카드를 버튼을 누르면 애니메이션으로 번호가 보이게 되고, 
+    동일한 번호가 적힌 카드를 뽑으면 성공이다.-->
+<!-- 조커 카드를 뽑으면 +10점-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Linking Style Sheet-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 전체 레이아웃 -->
+    <h1 style="text-align: center;">카드 뽑기 게임🤠</h1>
+    <p style="text-align: center;">같은 숫자가 적힌 카드 2장을 뽑아주세요!</p>
+    <p style="text-align: center;">(같은 숫자를 뽑으면 15점, 다른 숫자를 뽑으면 -10점)</p>
+    <div class="container">
+        <div class = "cardSet"></div>
+    </div>
+    <!-- modal 영역 -->
+    <div class="modal-bg"></div>
+    <div class="modal-wrap">
+        <p class="endSign"><strong>게임 종료🤗</strong></p>
+        <p class="showScore"></p>
+        <br>
+        <button class="replay">다시하기</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
