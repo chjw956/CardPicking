@@ -1,137 +1,242 @@
-* {
-    font-family: "Gowun Dodum", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
+    * {
+        font-family: "Gowun Dodum", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    .title {
+        text-align: center;
+    }
 
-div.container {
-    background-color: bisque;
-    width: 502px;
-    height: 502px;
-    margin: 150px auto;
-}
+    .subtitle {
+        text-align: center;
+    }
 
-div.box {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    float: left;
-}
+    div.container {
+        background-color: bisque;
+        width: 502px;
+        height: 502px;
+        margin: 150px auto;       
+    }
+    
+    div.box {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        float: left;
+    }
+    
+    div.clickCover {
+        margin: auto;
+        width: 97px;
+        height: 97px;
+        border: 2px solid #EEBC63;
+        background-color: #EEA24A;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;     /* 카드가 꺼내지는 모션을 보여줄 때 커버가 항상 위에 있게 하기 위함 */
+    }
+    
+    .goUp {
+        transform: translateY(-110px) rotate(45deg);
+        transition-duration: 1s;
+    }
+    
+    .goDown{
+        transform: translateY(110px) rotate(45deg);
+        transition-duration: 1s;
+    }
+    
+    .goRight {
+        transform: translateX(110px) rotate(45deg);
+        transition-duration: 1s;
+    }
+    
+    .goLeft {
+        transform: translateX(-110px) rotate(45deg);
+        transition-duration: 1s;
+    }
+    
+    .clear {
+        opacity: 0.3;
+        transition-duration: 1s;
+    }
+    
+    div.cover {
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background-color: #f1cf92;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    div.scoreCover{
+        text-align: center;
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        background-color: #f1cf92;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    div.card {
+        background-color: #a75f44;
+        border:1px solid orange;
+        color: white;
+        width: 100px;
+        height: 100px;
+        font-size: xxx-large;
+        text-align: center;
+        line-height: 100px;
+        float: left;
+        transition: 1s;
+        z-index: 1;
+    }
+    
+    div .blank {
+        background-color: orange;
+        border:1px solid orange;
+        width: 100px;
+        height: 100px;
+        font-size: xx-large;
+        text-align: center;
+        float: left;
+    }
+    
+    .score {
+        font-size: xx-large;
+    }
 
-div.clickCover {
-    margin: auto;
-    width: 97px;
-    height: 97px;
-    border: 2px solid #EEBC63;
-    background-color: #EEA24A;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;     /* 카드가 꺼내지는 모션을 보여줄 때 커버가 항상 위에 있게 하기 위함 */
-}
+    .modal-bg {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;  
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6); 
+        z-index: 999; 
+        display: none;
+    }
 
-.goUp {
-    transform: translateY(-110px) rotate(45deg);
-    transition-duration: 1s;
-}
+    .modal-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 200px;
+        background: bisque;
+        z-index: 1000;
+        border-radius: 40px;
+        display: none;
+        text-align: center;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.76);
+    }
 
-.goDown{
-    transform: translateY(110px) rotate(45deg);
-    transition-duration: 1s;
-}
+    .endSign {
+        font-size: x-large;
+    }
 
-.goRight {
-    transform: translateX(110px) rotate(45deg);
-    transition-duration: 1s;
-}
+    /* 스마트폰 사이즈 */
+    @media screen and (max-width: 767px){
+        div.container {
+            background-color: bisque;
+            width: 251px;
+            height: 251px;
+            margin: 150px auto;     
+        }
+        
+        div.box {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            float: left;
+        }
+        
+        div.clickCover {
+            margin: auto;
+            width: 47px;
+            height: 47px;
+            border: 2px solid #EEBC63;
+            background-color: #EEA24A;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2; 
+        }
 
-.goLeft {
-    transform: translateX(-110px) rotate(45deg);
-    transition-duration: 1s;
-}
+        div.cover {
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            background-color: #f1cf92;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        div.scoreCover{
+            text-align: center;
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            background-color: #f1cf92;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        div.card {
+            background-color: #a75f44;
+            border:1px solid orange;
+            color: white;
+            width: 50px;
+            height: 50px;
+            font-size: xx-large;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+            transition: 1s;
+            z-index: 1;
+        }
+        
+        div .blank {
+            background-color: orange;
+            border:1px solid orange;
+            width: 50px;
+            height: 50px;
+            font-size: medium;
+            text-align: center;
+            float: left;
+        }
 
-.clear {
-    opacity: 0.3;
-    transition-duration: 1s;
-}
+        .score {
+            font-size: large;
+        }
 
-div.cover {
-    margin: auto;
-    width: 100px;
-    height: 100px;
-    background-color: #f1cf92;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-div.scoreCover{
-    text-align: center;
-    margin: auto;
-    width: 100px;
-    height: 100px;
-    background-color: #f1cf92;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-div.card {
-    background-color: #a75f44;
-    border:1px solid orange;
-    color: white;
-    width: 100px;
-    height: 100px;
-    font-size: xxx-large;
-    text-align: center;
-    line-height: 100px;
-    float: left;
-    transition: 1s;
-    z-index: 1;
-}
-
-div .blank {
-    background-color: orange;
-    border:1px solid orange;
-    width: 100px;
-    height: 100px;
-    font-size: xx-large;
-    text-align: center;
-    float: left;
-}
-
-.score {
-    font-size: xx-large;
-}
-
-.modal-bg {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;   
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6); 
-    z-index: 999; 
-    display: none;
-}
-
-.modal-wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 200px;
-    background: bisque;
-    z-index: 1000;
-    border-radius: 40px;
-    display: none;
-    text-align: center;
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.76);
-}
-
-.endSign {
-    font-size: x-large;
-
-}
+        .goUp {
+            transform: translateY(-55px) rotate(45deg);
+            transition-duration: 1s;
+        }
+        
+        .goDown{
+            transform: translateY(55px) rotate(45deg);
+            transition-duration: 1s;
+        }
+        
+        .goRight {
+            transform: translateX(55px) rotate(45deg);
+            transition-duration: 1s;
+        }
+        
+        .goLeft {
+            transform: translateX(-55px) rotate(45deg);
+            transition-duration: 1s;
+        }
+    }
